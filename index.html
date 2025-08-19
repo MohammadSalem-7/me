@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المطور - Mohammad Salem</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to bottom, #0f172a, #000);
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 10px;
+    }
+
+    .profile {
+      position: relative;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,255,213,0.25);
+      backdrop-filter: blur(12px);
+      width: 850px;
+      max-width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: cardBuild 1s ease forwards;
+      overflow: hidden;
+    }
+
+    .profile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(90deg, #00ffd5, #7c3aed, #ff0080, #00ffd5);
+      background-size: 300% 300%;
+      animation: borderRun 6s linear infinite;
+      -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+    }
+
+    @keyframes borderRun {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+    @keyframes cardBuild {
+      0% { opacity: 0; transform: scale(0.6) rotateX(20deg); }
+      50% { opacity: 0.5; transform: scale(0.9) rotateX(10deg); }
+      100% { opacity: 1; transform: scale(1) rotateX(0); }
+    }
+
+    .profile img.main-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #00ffd5;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      z-index: 2;
+    }
+    .profile img.main-photo:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 15px #00ffd5);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.4s;
+      z-index: 2;
+    }
+
+    .info h2 {
+      font-size: 2em;
+      margin: 0;
+      font-weight: bold;
+      line-height: 1.2em;
+    }
+    .info h2 span:first-child { color: #00ffd5; }
+    .info h2 span:last-child { color: #7c3aed; transition: color 0.6s; }
+    .info p {
+      font-size: 15px;
+      color: #ccc;
+      margin: 10px 0 20px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+    .info p.fade-out { opacity: 0; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+    .socials a {
+      color: #eee;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+    .socials a:hover { color: #00ffd5; transform: scale(1.2); }
+
+    .extra-info {
+      margin-top: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+    .extra-info button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #00ffd5;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .extra-info button:hover { background: #7c3aed; color: #fff; }
+
+
+    .hidden-box {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.08);
+  border-left: 3px solid #00ffd5;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.hidden-box.active {
+  opacity: 1;
+  max-height: 1000px; 
+  transform: translateY(0);
+  box-shadow: 0 0 12px rgba(0,255,213,0.2);
+}
+
+
+.socials a {
+  color: #eee;
+  font-size: 22px;
+  transition: 0.4s;
+  position: relative;
+}
+
+.socials a:hover {
+  transform: scale(1.3) rotate(8deg);
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+
+.socials a[href*="github"] { color: #ccc; }
+.socials a[href*="twitter"] { color: #1da1f2; }
+.socials a[href*="facebook"] { color: #1877f2; }
+.socials a[href*="wa.me"] { color: #25d366; }
+.socials a[href*="discord"] { color: #7289da; }
+
+
+.socials a {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: socialsUp 0.6s ease forwards;
+}
+.socials a:nth-child(1) { animation-delay: 0.2s; }
+.socials a:nth-child(2) { animation-delay: 0.4s; }
+.socials a:nth-child(3) { animation-delay: 0.6s; }
+.socials a:nth-child(4) { animation-delay: 0.8s; }
+.socials a:nth-child(5) { animation-delay: 1s; }
+
+@keyframes socialsUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+    .kali-logo {
+      width: 100px;
+      height: 100px;
+      filter: drop-shadow(0 0 12px #00ffd5);
+      transition: transform 0.3s ease, filter 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.6s;
+      z-index: 2;
+    }
+    .kali-logo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 20px #00ffd5);
+    }
+
+    @media (max-width: 700px) {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 20px;
+      }
+      .info h2 { font-size: 1.8em; text-align: center; }
+      .info p { text-align: center; }
+      .socials { justify-content: center; }
+      .kali-logo { width: 80px; height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="Medo.jpg" alt="Mohammad Salem" class="main-photo">
+
+    <div class="info">
+      <h2><span>Mohammad</span> <span id="lastname">Salem</span></h2>
+      <p id="bio">مطور ويب شغوف بابتكار تجارب رقمية مستقبلية تجمع بين التصميم العصري والبرمجة الذكية.</p>
+
+      <div class="socials">
+        <a href="https://github.com/mohammadsalem-7" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/MOHAMMED_1SALEM" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/mohamed.salemahmed.10236" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/201558025875" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://discord.com/users/1275148740092760170" target="_blank"><i class="fab fa-discord"></i></a>
+      </div>
+
+      <div class="extra-info">
+        <button onclick="toggleInfo()">معلومات إضافية</button>
+        <div id="more-info" class="hidden-box">
+          <p>📌 العمر: 18</p>
+          <p>🌍 البلد: مصر</p>
+          <p>💻 التخصص: تطوير ويب + أمن سيبراني+ اختبار اختراق</p>
+        </div>
+      </div>
+    </div>
+
+    <img src="Kali-dragon-icon.svg.png"
+         alt="Kali Linux Logo" class="kali-logo">
+  </div>
+
+  <script>
+    const lastName = document.getElementById('lastname');
+    let colors = ['#7c3aed', '#00ffd5', '#ff0080'];
+    let i = 0;
+    setInterval(() => { lastName.style.color = colors[i % colors.length]; i++; }, 1500);
+
+    const bio = document.getElementById('bio');
+    const messages = [
+      "مطور ويب ومختبر اختراق شغوف بابتكار تجارب رقمية آمنة.",
+      "مهتم بالأمن السيبراني وحماية الأنظمة والتطبيقات.",
+      "خبير في الواجهات الأمامية والتجارب التفاعلية مع تركيز على الأمان.",
+      "أقوم بتحليل الثغرات واختبار الاختراق لتعزيز سلامة الشبكات.",
+      "أحب تحويل الأفكار إلى تصميمات أنيقة وواقعية مع مراعاة الأمان.",
+      "أسعى دائمًا لتطوير مهاراتي في الأمن السيبراني وتقنيات الحماية.",
+      "أشارك معرفتي وأحدث طرق الحماية مع المجتمع التقني."
+    ];
+
+    let j = 0;
+    setInterval(() => {
+      bio.classList.add('fade-out');
+      setTimeout(() => { 
+        bio.textContent = messages[j % messages.length]; 
+        bio.classList.remove('fade-out'); 
+        j++; 
+      }, 800);
+    }, 4000);
+
+    function toggleInfo() {
+      document.getElementById('more-info').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
