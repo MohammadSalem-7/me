@@ -276,7 +276,27 @@
     <img src="https://d.top4top.io/p_3518r34uj1.png"
          alt="Kali Linux Logo" class="kali-logo">
   </div>
+  <audio id="bg-music" loop>
+    <source src="https://l.top4top.io/m_3526bguc91.mp4" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
 
+  <button id="play-btn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #00ffd5;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 0 12px rgba(0,255,213,0.4);
+  ">
+    🎶 تشغيل الأغنية
+  </button>
   <script>
     const lastName = document.getElementById('lastname');
     let colors = ['#7c3aed', '#00ffd5', '#ff0080'];
@@ -307,6 +327,25 @@
     function toggleInfo() {
       document.getElementById('more-info').classList.toggle('active');
     }
+	const music = document.getElementById("bg-music");
+    const playBtn = document.getElementById("play-btn");
+
+    window.addEventListener("load", async () => {
+      try {
+        await music.play();
+      } catch (e) {
+        playBtn.style.display = "block";
+      }
+    });
+
+    playBtn.addEventListener("click", async () => {
+      try {
+        await music.play();
+        playBtn.style.display = "none";
+      } catch (e) {
+        console.log("فشل تشغيل الأغنية:", e);
+      }
+    });
   </script>
 </body>
 </html>
