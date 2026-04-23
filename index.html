@@ -497,6 +497,7 @@ section{position:relative;z-index:1;padding:100px 5%;}
 .social-btn:hover{color:var(--black);border-color:var(--green);box-shadow:0 0 20px var(--green-glow);}
 .social-icon{font-size:1.1rem;}
 
+/* ── FOOTER ── */
 footer{
   position:relative;z-index:1;
   padding:40px 5%;text-align:center;
@@ -513,14 +514,17 @@ footer::before{
 }
 .footer-text span{color:var(--green);}
 
+/* ── SCROLL REVEAL ── */
 .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.2,0.8,0.4,1);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* ── NOISE OVERLAY ── */
 .noise{
   position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.025;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:40px;}
   #about .about-grid{grid-template-columns:1fr;}
@@ -529,17 +533,23 @@ footer::before{
 @media(max-width:600px){
   body{cursor:auto;}
   #cursor,#cursor-dot{display:none;}
+  nav{padding:12px 5%;}
+  .nav-status{font-size:0.62rem;gap:6px;}
+  .audio-toggle{padding:5px 8px;font-size:0.58rem;}
+  #hero{align-items:flex-start;padding:110px 5% 40px;}
   .nav-links{display:none;}
   .about-stats{grid-template-columns:1fr 1fr;}
   .projects-grid{grid-template-columns:1fr!important;}
   .social-btn,.hero-cta,.skill-card,.project-card,.audio-toggle{cursor:pointer;}
 }
 
+/* scanline */
 .scanlines{
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
 }
 
+/* hex grid decorative */
 .hex-deco{
   position:absolute;right:-100px;top:50%;transform:translateY(-50%);
   opacity:0.04;font-size:300px;color:var(--green);pointer-events:none;
@@ -549,14 +559,18 @@ footer::before{
 </head>
 <body>
 
+<!-- Cursor -->
 <div id="cursor"></div>
 <div id="cursor-dot"></div>
 
+<!-- Noise + Scanlines -->
 <div class="noise"></div>
 <div class="scanlines"></div>
 
+<!-- Three.js canvas -->
 <canvas id="bg-canvas"></canvas>
 
+<!-- LOADER -->
 <div id="loader">
   <div class="loader-terminal">
     <div id="loader-lines"></div>
@@ -569,7 +583,7 @@ footer::before{
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">m_1_s</div>
+  <div class="nav-logo">M E D O</div>
   <ul class="nav-links">
     <li><a href="#about">./about</a></li>
     <li><a href="#skills">./skills</a></li>
@@ -637,8 +651,8 @@ footer::before{
       </div>
 
       <div class="profile">
-          <p>📌 Age: 19</p>
-          <p>🌍 Country: مصر</p>
+          <p>📌 العمر: 19</p>
+          <p>🌍 البلد: مصر</p>
       </div>
       <div class="online-chip"><span class="dot"></span>ONLINE</div>
 
@@ -669,7 +683,6 @@ footer::before{
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">whoami</span></div>
         <span class="t-out glitch-text">Mohammad Salem — Ethical Hacker & Full Stack Dev</span>
         <br>
-		  <!-- ══════════ Mohammad Salem ══════════ -->
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">cat profile.txt</span></div>
         <span class="t-out">Cybersecurity specialist with a deep passion</span>
         <span class="t-out">for finding vulnerabilities before the bad guys do.</span>
@@ -868,6 +881,7 @@ footer::before{
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-text">
     <span>// DEVELOPED BY </span><span>Mohammad Salem</span><span> — m_1_s // </span>
@@ -880,6 +894,7 @@ footer::before{
 </audio>
 
 <script>
+// ── CURSOR ──
 const cursor=document.getElementById('cursor');
 const cursorDot=document.getElementById('cursor-dot');
 let mx=0,my=0,cx=0,cy=0;
@@ -901,6 +916,7 @@ document.querySelectorAll('a,button,.skill-card,.project-card,.social-btn,.hero-
   el.addEventListener('mouseleave',()=>cursor.classList.remove('expand'));
 });
 
+// ── AUDIO ──
 const audio=document.getElementById('bg-audio');
 const audioToggle=document.getElementById('audio-toggle');
 audio.volume=0.12;
@@ -923,6 +939,7 @@ audioToggle.addEventListener('click',async()=>{
   }
 });
 
+// ── LOADER ──
 const loaderLines=[
   '> Initializing secure environment...',
   '> Loading cryptographic modules...',
@@ -951,6 +968,7 @@ setTimeout(()=>{
   setTimeout(()=>document.getElementById('loader').style.display='none',800);
 },2800);
 
+// ── THREE.JS MATRIX RAIN + PARTICLES (adaptive) ──
 (function(){
   const canvas=document.getElementById('bg-canvas');
   const memory=navigator.deviceMemory||4;
@@ -1028,6 +1046,7 @@ setTimeout(()=>{
   });
 })();
 
+// ── TYPING ANIMATION ──
 const phrases=['Ethical Hacker','Penetration Tester','Full Stack Developer','Security Researcher','Code Architect'];
 let pi=0,ci=0,deleting=false;
 const typingEl=document.getElementById('typing-text');
@@ -1046,6 +1065,7 @@ function type(){
 }
 setTimeout(type,3200);
 
+// ── SCROLL REVEAL ──
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -1069,6 +1089,7 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.15});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
+// ── PARALLAX on hero ──
 document.addEventListener('mousemove',e=>{
   const x=(e.clientX/window.innerWidth-0.5)*20;
   const y=(e.clientY/window.innerHeight-0.5)*10;
@@ -1076,6 +1097,7 @@ document.addEventListener('mousemove',e=>{
   if(panel) panel.style.transform=`translateY(${-y*0.5}px) rotateY(${x*0.3}deg) rotateX(${-y*0.2}deg)`;
 });
 
+// ── CLICK RIPPLE ──
 document.addEventListener('click',e=>{
   const r=document.createElement('div');
   r.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:4px;height:4px;border-radius:50%;background:var(--green);pointer-events:none;z-index:9997;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--green);animation:ripple-out 0.6s ease forwards;`;
@@ -1086,6 +1108,7 @@ const rippleStyle=document.createElement('style');
 rippleStyle.textContent='@keyframes ripple-out{to{width:60px;height:60px;opacity:0;}}';
 document.head.appendChild(rippleStyle);
 
+// ── SKILL CARD 3D TILT ──
 document.querySelectorAll('.skill-card').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const rect=card.getBoundingClientRect();
@@ -1096,6 +1119,7 @@ document.querySelectorAll('.skill-card').forEach(card=>{
   card.addEventListener('mouseleave',()=>{card.style.transform='';});
 });
 
+// ── SILENT DEVTOOLS / INSPECT BLOCK ──
 document.addEventListener('contextmenu',e=>{
   e.preventDefault();
 },true);
