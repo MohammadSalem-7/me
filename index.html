@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>𓂀</text></svg>" />
-<title>m_1_s | Mohammad Salem — Ethical Hacker</title>
+<title>m_1_s | Mohammad Salem — Developer · Pentester · Security Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
@@ -543,6 +543,87 @@ footer::before{
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
+.ops-intro{
+  font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:var(--text-dim);
+  letter-spacing:2px;margin:-40px 0 34px;
+}
+.ops-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;}
+.filter-btn{
+  font-family:'Share Tech Mono',monospace;font-size:0.65rem;letter-spacing:2px;
+  padding:8px 16px;background:rgba(0,255,159,0.05);border:1px solid var(--border);
+  color:var(--text-dim);cursor:none;transition:all 0.3s;
+  clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+}
+.filter-btn:hover{color:var(--green);border-color:var(--green);box-shadow:0 0 14px var(--green-glow);}
+.filter-btn.active{background:var(--green);color:var(--black);border-color:var(--green);font-weight:700;}
+.ops-group{margin-bottom:64px;}
+.ops-group-head{display:flex;align-items:center;gap:16px;margin-bottom:26px;}
+.ops-group-title{
+  font-family:'Orbitron',sans-serif;font-size:0.95rem;font-weight:700;
+  color:var(--green);letter-spacing:4px;text-transform:uppercase;
+  text-shadow:0 0 12px var(--green-glow);white-space:nowrap;
+}
+.ops-group-count{
+  font-family:'Share Tech Mono',monospace;font-size:0.65rem;
+  color:var(--text-dim);letter-spacing:2px;
+}
+.ops-group-note{
+  font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:var(--text-dim);
+  letter-spacing:1px;margin:-14px 0 24px;line-height:1.7;
+}
+.project-img.pad{padding:0;}
+.project-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.media-icon{font-size:3.5rem;}
+.project-media{
+  height:200px;background:#000;border-bottom:1px solid var(--border);position:relative;
+}
+.project-media video{width:100%;height:100%;object-fit:cover;display:block;background:#000;}
+.img-grid{
+  display:grid;height:200px;gap:2px;background:#000;border-bottom:1px solid var(--border);
+}
+.img-grid.c2{grid-template-columns:1fr 1fr;}
+.img-grid.c3{grid-template-columns:1fr 1fr 1fr;}
+.img-grid.c4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+.img-grid img{
+  width:100%;height:100%;object-fit:cover;display:block;cursor:none;
+  transition:transform 0.3s,filter 0.3s;
+}
+.img-grid img:hover{transform:scale(1.05);filter:brightness(1.2);}
+.project-meta{
+  font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:var(--green);
+  letter-spacing:1px;margin-top:12px;line-height:1.9;
+}
+.project-meta .pm-label{color:var(--text-dim);}
+.project-meta a{color:var(--green);text-decoration:none;border-bottom:1px dashed var(--border);}
+.project-meta a:hover{text-shadow:0 0 8px var(--green);}
+.project-meta+.project-meta{margin-top:4px;}
+.feature-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.feature-chip{
+  padding:3px 8px;background:rgba(0,255,159,0.06);border:1px solid rgba(0,255,159,0.18);
+  font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:1px;
+}
+.meta-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.meta-chip{
+  font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:1px;color:var(--purple);
+  border:1px solid rgba(157,78,221,0.3);background:rgba(157,78,221,0.1);padding:3px 8px;
+}
+#lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:9990;
+  display:none;align-items:center;justify-content:center;padding:5%;
+}
+#lightbox.open{display:flex;}
+#lightbox img{
+  max-width:92%;max-height:86%;border:1px solid var(--green);
+  box-shadow:0 0 40px var(--green-glow);object-fit:contain;
+}
+#lightbox-close{
+  position:absolute;top:24px;right:32px;color:var(--green);
+  font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:2px;
+  background:rgba(0,255,159,0.06);border:1px solid var(--border);
+  padding:8px 14px;cursor:none;transition:all 0.3s;
+}
+#lightbox-close:hover{background:var(--green);color:var(--black);box-shadow:0 0 20px var(--green-glow);}
+
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:40px;}
   #about .about-grid{grid-template-columns:1fr;}
@@ -558,7 +639,14 @@ footer::before{
   .nav-links{display:none;}
   .about-stats{grid-template-columns:1fr 1fr;}
   .projects-grid{grid-template-columns:1fr!important;}
-  .social-btn,.hero-cta,.skill-card,.project-card,.audio-toggle{cursor:pointer;}
+  .social-btn,.hero-cta,.skill-card,.project-card,.audio-toggle,.filter-btn,.img-grid img,#lightbox-close{cursor:pointer;}
+  .ops-filters{gap:8px;}
+  .filter-btn{padding:7px 12px;font-size:0.6rem;}
+  .ops-group{margin-bottom:48px;}
+  .ops-group-title{font-size:0.8rem;letter-spacing:3px;white-space:normal;}
+  .img-grid.c3{grid-template-columns:1fr 1fr;}
+  .img-grid.c4{grid-template-columns:1fr 1fr;}
+  .project-media,.img-grid,.project-img{height:180px;}
 }
 
 .scanlines{
@@ -598,7 +686,7 @@ footer::before{
   <ul class="nav-links">
     <li><a href="#about">./about</a></li>
     <li><a href="#skills">./skills</a></li>
-    <li><a href="#projects">./projects</a></li>
+    <li><a href="#projects">./operations</a></li>
     <li><a href="#contact">./contact</a></li>
   </ul>
   <div class="nav-status"><div class="status-dot"></div>SYSTEM ONLINE <button id="audio-toggle" class="audio-toggle">AUDIO OFF</button></div>
@@ -622,6 +710,10 @@ footer::before{
       <div class="stat-line">
         <span class="stat-label">OPERATOR</span>
         <span class="stat-value">Mohammad Salem</span>
+      </div>
+      <div class="stat-line">
+        <span class="stat-label">ROLE</span>
+        <span class="stat-value">DEV · TESTER · PENTESTER</span>
       </div>
       <div class="stat-line" style="flex-direction:column;align-items:flex-start;">
         <div style="display:flex;justify-content:space-between;width:100%;">
@@ -690,20 +782,23 @@ footer::before{
       </div>
       <div class="terminal-body">
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">whoami</span></div>
-        <span class="t-out glitch-text">Mohammad Salem — Ethical Hacker & Full Stack Dev</span>
+        <span class="t-out glitch-text">Mohammad Salem — Full Stack Dev · Pentester · Tester</span>
         <br>
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">cat profile.txt</span></div>
         <span class="t-out">Cybersecurity specialist with a deep passion</span>
         <span class="t-out">for finding vulnerabilities before the bad guys do.</span>
         <span class="t-out">I bridge the gap between <span class="t-highlight">offensive security</span></span>
         <span class="t-out">and <span class="t-highlight">full-stack development</span>.</span>
+        <span class="t-out">I also <span class="t-highlight">test</span> what I build — software,</span>
+        <span class="t-out">security, games and the tools in between.</span>
         <br>
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">cat mission.txt</span></div>
         <span class="t-out">Protect systems. Build robust solutions.</span>
         <span class="t-out">Leave no exploit behind.</span>
         <br>
         <div><span class="t-prompt">root@kali:~# </span><span class="t-cmd">ls specialties/</span></div>
-        <span class="t-out"><span class="t-highlight">pentest/</span>  <span class="t-highlight">webdev/</span>  <span class="t-highlight">exploit/</span>  <span class="t-highlight">python/</span></span>
+        <span class="t-out"><span class="t-highlight">pentest/</span>  <span class="t-highlight">testing/</span>  <span class="t-highlight">webdev/</span>  <span class="t-highlight">exploit/</span></span>
+        <span class="t-out"><span class="t-highlight">python/</span>  <span class="t-highlight">lua/</span>  <span class="t-highlight">gamedev/</span>  <span class="t-highlight">automation/</span></span>
         <br>
         <div><span class="t-prompt">root@kali:~# </span><span class="blink">_</span></div>
       </div>
@@ -798,6 +893,24 @@ footer::before{
       <div class="skill-tag">BOT DEVELOPER</div>
       <div class="skill-level"><div class="skill-level-bar"><div class="skill-level-fill" style="width:92%"></div></div></div>
     </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🧪</span>
+      <div class="skill-name">Software Tester</div>
+      <div class="skill-tag">QA / SECURITY</div>
+      <div class="skill-level"><div class="skill-level-bar"><div class="skill-level-fill" style="width:91%"></div></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🎮</span>
+      <div class="skill-name">Game / Mod Dev</div>
+      <div class="skill-tag">LUA / C++ / .NET</div>
+      <div class="skill-level"><div class="skill-level-bar"><div class="skill-level-fill" style="width:85%"></div></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🛠</span>
+      <div class="skill-name">Tools &amp; Automation</div>
+      <div class="skill-tag">PYTHON / SCRIPTS</div>
+      <div class="skill-level"><div class="skill-level-bar"><div class="skill-level-fill" style="width:93%"></div></div></div>
+    </div>
   </div>
 </section>
 
@@ -807,73 +920,1038 @@ footer::before{
     <h2 class="section-title">Operations</h2>
     <div class="section-line"></div>
   </div>
-  <div class="projects-grid">
-    <div class="project-card reveal">
-      <div class="project-scan"></div>
-      <div class="project-img" style="font-size:3.5rem;">🔍</div>
-      <div class="project-content">
-        <div class="project-tags">
-          <span class="project-tag">PYTHON</span>
-          <span class="project-tag">PENTESTING</span>
-        </div>
-        <div class="project-title">Auto Recon Framework</div>
-        <div class="project-desc">Automated reconnaissance tool for network scanning, vulnerability detection, and report generation. Combines Nmap, Shodan, and custom exploit modules.</div>
-      </div>
-      <div class="project-footer">
-        <div class="project-status"><div class="status-dot"></div>CLASSIFIED</div>
-        <span class="project-link">[ VIEW_PROJECT ]</span>
-      </div>
+
+  <div class="ops-intro reveal">&gt; categorized field work // select a category</div>
+
+  <div class="ops-filters reveal">
+    <button class="filter-btn active" data-filter="all">ALL</button>
+    <button class="filter-btn" data-filter="bots">BOTS</button>
+    <button class="filter-btn" data-filter="tools">TOOLS</button>
+    <button class="filter-btn" data-filter="scripts">SCRIPTS</button>
+    <button class="filter-btn" data-filter="lua">LUA / MTA</button>
+    <button class="filter-btn" data-filter="gta">GTA V</button>
+    <button class="filter-btn" data-filter="websites">WEBSITES</button>
+    <button class="filter-btn" data-filter="logins">LOGIN PANELS</button>
+    <button class="filter-btn" data-filter="kali">KALI / PENTESTING</button>
+  </div>
+
+  <div class="ops-group" data-cat="bots">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Bots</h3>
+      <span class="ops-group-count">// 07</span>
+      <div class="section-line"></div>
     </div>
-    <div class="project-card reveal">
-      <div class="project-scan"></div>
-      <div class="project-img" style="font-size:3.5rem;">🌐</div>
-      <div class="project-content">
-        <div class="project-tags">
-          <span class="project-tag">REACT</span>
-          <span class="project-tag">NODE.JS</span>
-          <span class="project-tag">MONGODB</span>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botm.png" alt="Mohammad Salem Bot" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">AUTOMATION</span>
+            <span class="project-tag">SECURITY</span>
+            <span class="project-tag">UTILITY</span>
+            <span class="project-tag">FUN</span>
+          </div>
+          <div class="project-title">Mohammad Salem Bot ©</div>
+          <div class="project-desc">Built for powerful and modern Discord communities.</div>
+          <div class="project-meta">
+            <span class="pm-label">DEVELOPER:</span> Mohammad Salem<br>
+            <span class="pm-label">DISCORD:</span> m_1_s<br>
+            <span class="pm-label">OWNER:</span> Mohammad Salem
+          </div>
         </div>
-        <div class="project-title">SecureVault Platform</div>
-        <div class="project-desc">Full-stack web application for encrypted password and credential management with zero-knowledge architecture and end-to-end encryption.</div>
-      </div>
-      <div class="project-footer">
-        <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
-        <a href="https://github.com/mohammadsalem-7" target="_blank" class="project-link">[ VIEW_CODE ]</a>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-scan"></div>
-      <div class="project-img" style="font-size:3.5rem;">🎮</div>
-      <div class="project-content">
-        <div class="project-tags">
-          <span class="project-tag">LUA</span>
-          <span class="project-tag">FiveM</span>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
         </div>
-        <div class="project-title">FiveM Security Suite</div>
-        <div class="project-desc">Advanced Lua-based anti-cheat and security system for FiveM game servers. Detects memory injections, packet manipulation, and unauthorized modifications.</div>
       </div>
-      <div class="project-footer">
-        <div class="project-status"><div class="status-dot"></div>ACTIVE</div>
-        <span class="project-link">[ VIEW_PROJECT ]</span>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-scan"></div>
-      <div class="project-img" style="font-size:3.5rem;">🕸</div>
-      <div class="project-content">
-        <div class="project-tags">
-          <span class="project-tag">PYTHON</span>
-          <span class="project-tag">JS</span>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botbg.png" alt="Witcher BG Remover" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">BACKGROUND REMOVER</span>
+          </div>
+          <div class="project-title">Witcher BG Remover</div>
+          <div class="project-desc">Fast and accurate background removal for Discord servers.</div>
+          <div class="project-meta"><span class="pm-label">DEVELOPER:</span> Mohammad Salem / m_1_s</div>
         </div>
-        <div class="project-title">WebShell Hunter</div>
-        <div class="project-desc">Intelligent web shell detection and removal tool using pattern analysis, entropy checking, and ML-based classification for compromised server cleanup.</div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
       </div>
-      <div class="project-footer">
-        <div class="project-status"><div class="status-dot"></div>CLASSIFIED</div>
-        <span class="project-link">[ VIEW_PROJECT ]</span>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botph.png" alt="Witcher Photo Editing" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">PHOTO EDITOR</span>
+          </div>
+          <div class="project-title">Witcher Photo Editing</div>
+          <div class="project-desc">Smart photo editing for Discord servers with fast adjustments and high-quality output.</div>
+          <div class="project-meta"><span class="pm-label">DEVELOPER:</span> Mohammad Salem / m_1_s</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
       </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botwit.png" alt="Witcher System" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">STORE BOT</span>
+          </div>
+          <div class="project-title">Witcher System ©</div>
+          <div class="project-desc">Official Witcher Store bot.</div>
+          <div class="project-meta">
+            <span class="pm-label">BY:</span> Mohammad Salem<br>
+            <span class="pm-label">DISCORD:</span> <a href="https://discord.gg/wM6Grbvtxm" target="_blank" rel="noopener">discord.gg/wM6Grbvtxm</a>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botp.png" alt="Premium Discord Store System V2" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">STORE SYSTEM</span>
+            <span class="project-tag">TICKETS</span>
+            <span class="project-tag">COMPONENTS V2</span>
+          </div>
+          <div class="project-title">Premium Discord Store System V2</div>
+          <div class="project-desc">Complete store, ticket and support system for Discord communities. Handles support, complaints, service requests and compensation flows with claim and ticket management, rename, add/remove members, close and reopen, client notifications, action logging, plus suggestions and ratings.</div>
+          <div class="feature-list">
+            <span class="feature-chip">ADVANCED TICKET SYSTEM</span>
+            <span class="feature-chip">CLAIM &amp; LOGGING</span>
+            <span class="feature-chip">CLIENT NOTIFICATIONS</span>
+            <span class="feature-chip">SUGGESTIONS &amp; RATINGS</span>
+            <span class="feature-chip">AR / EN DECORATION</span>
+            <span class="feature-chip">INTERACTIVE PRICE BOARD</span>
+            <span class="feature-chip">TERMS &amp; WARRANTY</span>
+            <span class="feature-chip">PAYMENT METHODS</span>
+            <span class="feature-chip">FULLY CONFIGURABLE</span>
+            <span class="feature-chip">MODERN INTERFACES</span>
+            <span class="feature-chip">CUSTOM BANNERS &amp; COLORS</span>
+          </div>
+          <div class="project-meta"><span class="pm-label">TARGET:</span> Discord stores · digital services · buy/sell communities · support servers</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="botaz.png" alt="AzkarBot" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">AUTOMATION</span>
+            <span class="project-tag">UTILITY</span>
+          </div>
+          <div class="project-title">AzkarBot</div>
+          <div class="project-desc">Automatically sends Quran verses and duas at configurable intervals.</div>
+          <div class="project-meta"><span class="pm-label">PHRASE:</span> صدقة جارية</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🎫</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">TICKETS</span>
+            <span class="project-tag">UTILITY</span>
+          </div>
+          <div class="project-title">TicketBot</div>
+          <div class="project-desc">Discord ticket-handling bot.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>OPERATIONAL</div>
+          <span class="project-link">[ BOTS ]</span>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <div class="ops-group" data-cat="tools">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Tools</h3>
+      <span class="ops-group-count">// 09</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="ms.PNG" alt="MS Downloader" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">UTILITY</span>
+            <span class="project-tag">MEDIA</span>
+          </div>
+          <div class="project-title">MS Downloader</div>
+          <div class="project-desc">Video/audio downloader built for fast downloads at the highest available quality, running locally on the user's device.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="mds.PNG" alt="Medo Dis Multi Tool" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">DISCORD</span>
+            <span class="project-tag">ADMIN</span>
+            <span class="project-tag">UTILITY</span>
+          </div>
+          <div class="project-title">Medo Dis Multi Tool</div>
+          <div class="project-desc">Discord administration and utility toolkit combining server-management functions with automation utilities.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="mv1.PNG" alt="MedoTool V1" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">SECURITY</span>
+            <span class="project-tag">OSINT</span>
+            <span class="project-tag">NETWORK</span>
+          </div>
+          <div class="project-title">MedoTool V1</div>
+          <div class="project-desc">Multi-purpose security and utility toolkit covering network, information and web-testing basics.</div>
+          <div class="feature-list">
+            <span class="feature-chip">IP TOOLS</span>
+            <span class="feature-chip">PORT SCANNING</span>
+            <span class="feature-chip">IP INFORMATION</span>
+            <span class="feature-chip">GEOLOCATION</span>
+            <span class="feature-chip">URL STATUS</span>
+            <span class="feature-chip">URL EXPANSION</span>
+            <span class="feature-chip">PASSWORD GENERATOR</span>
+            <span class="feature-chip">HASH ANALYSIS</span>
+            <span class="feature-chip">WEBSITE SECURITY TESTING</span>
+            <span class="feature-chip">OSINT UTILITIES</span>
+            <span class="feature-chip">NETWORK TESTING</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="ddos.png" alt="MSddos" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">NETWORK</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">MSddos</div>
+          <div class="project-desc">Network stress/testing research project for studying traffic behavior and resilience under controlled lab conditions.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="br.png" alt="Account BruteForce" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">AUTH TESTING</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Account BruteForce</div>
+          <div class="project-desc">Authorized security-testing tool for studying authentication strength and login protection. Restricted to consented testing environments.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="xm.png" alt="MEDOX Malware" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">MALWARE ANALYSIS</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">MEDOX Malware</div>
+          <div class="project-desc">Malware analysis and file-research project focused on static inspection, unpacking and sample study for defensive purposes.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c2">
+          <img src="ws1.png" alt="Webhook Spammer preview 1" loading="lazy" decoding="async">
+          <img src="ws2.png" alt="Webhook Spammer preview 2" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">WEBHOOK</span>
+            <span class="project-tag">AUTOMATION</span>
+            <span class="project-tag">TESTING</span>
+          </div>
+          <div class="project-title">Webhook Spammer</div>
+          <div class="project-desc">Webhook automation/testing research project examining webhook behavior, configuration and delivery limits.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="mv2.png" alt="MedoTool V2" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">SECURITY</span>
+            <span class="project-tag">OSINT</span>
+            <span class="project-tag">NETWORK</span>
+          </div>
+          <div class="project-title">MedoTool V2</div>
+          <div class="project-desc">Successor to MedoTool V1 — network, OSINT and utility suite for security testing and daily diagnostics. Includes all functionality from the previous version.</div>
+          <div class="project-meta"><span class="pm-label">NETWORK:</span> Ping · Traceroute · DNS Lookup · WHOIS · SSL Certificate</div>
+          <div class="project-meta"><span class="pm-label">OSINT:</span> robots.txt · Sitemap Inspection · EXIF Metadata</div>
+          <div class="project-meta"><span class="pm-label">UTILITIES:</span> Base64 · URL Encode/Decode · Hash Generator · Netstat Summary · ARP Table · MAC Vendor · Banner Grabbing · SMTP/FTP/SSH Banners · Redirect Chain · Cookie Inspection</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="webh.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">WEBHOOK</span>
+            <span class="project-tag">ADMIN</span>
+          </div>
+          <div class="project-title">Webhook Controller</div>
+          <div class="project-desc">Authorized webhook administration and testing tool.</div>
+          <div class="feature-list">
+            <span class="feature-chip">WEBHOOK MANAGEMENT</span>
+            <span class="feature-chip">CONFIGURATION</span>
+            <span class="feature-chip">TESTING</span>
+            <span class="feature-chip">ADMINISTRATION</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ TOOLS ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="scripts">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Scripts</h3>
+      <span class="ops-group-count">// 06</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="ops-group-note reveal">&gt; security research experiments — presented for defensive and educational analysis only</div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🗜</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">ARCHIVE</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Pass ZIP&amp;RAR</div>
+          <div class="project-desc">Archive password/recovery research for ZIP and RAR files.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">⌨</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">ENDPOINT</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Keylogger</div>
+          <div class="project-desc">Security research experiment focused on endpoint input-capture behavior and defensive analysis.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🔑</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">AUTH</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Token</div>
+          <div class="project-desc">Security research experiment demonstrating the risks associated with exposed authentication tokens and credential security.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🖥</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">ENDPOINT</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Screen</div>
+          <div class="project-desc">Endpoint monitoring and security research experiment involving periodic screen capture.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🖼</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">DATA</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">Photos</div>
+          <div class="project-desc">Security research experiment exploring endpoint file/media collection risks and data protection.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RESEARCH</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">📡</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">NETWORK</span>
+            <span class="project-tag">UTILITY</span>
+          </div>
+          <div class="project-title">Port Scanner</div>
+          <div class="project-desc">Simple port-scanning utility with progress tracking and result logging.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>RELEASED</div>
+          <span class="project-link">[ SCRIPTS ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="lua">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Lua / MTA</h3>
+      <span class="ops-group-count">// 08</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="piz.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">Pizza Delivery Job</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="air.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">Air Parcel Delivery Job</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="botco.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">Account Linking Bot</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="rok.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">License Mod</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="logi.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">Login + Cinematic System</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="cr.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+          </div>
+          <div class="project-title">CyberRadio</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="mtlog.png" alt="Logs Bot" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+            <span class="project-tag">LOGGING</span>
+          </div>
+          <div class="project-title">Logs Bot</div>
+          <div class="project-desc">MTA server logging system displaying server activity such as money, kills, vehicles, bans, and other events.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="statbot.png" alt="StatsBot" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LUA</span>
+            <span class="project-tag">MTA</span>
+            <span class="project-tag">STATISTICS</span>
+          </div>
+          <div class="project-title">StatsBot</div>
+          <div class="project-desc">Bot for displaying the status/statistics of an MTA server.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>DEPLOYED</div>
+          <span class="project-link">[ LUA / MTA ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="gta">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">GTA V</h3>
+      <span class="ops-group-count">// 03</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="ops-group-note reveal">&gt; gameplay and vehicle mods authored by M_Salem</div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">🏎</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">GAMEPLAY</span>
+            <span class="project-tag">VEHICLES</span>
+          </div>
+          <div class="project-title">Cruise Control</div>
+          <div class="project-desc">Vehicle cruise-control gameplay mod for GTA V.</div>
+          <div class="project-meta"><span class="pm-label">VERSION:</span> 1.0 · <span class="pm-label">AUTHOR:</span> M_Salem</div>
+          <div class="feature-list">
+            <span class="feature-chip">763 DOWNLOADS</span>
+            <span class="feature-chip">11 LIKES</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>PUBLISHED</div>
+          <span class="project-link">[ GTA V ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">📊</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">GAMEPLAY</span>
+            <span class="project-tag">HUD</span>
+          </div>
+          <div class="project-title">Cyber HUD</div>
+          <div class="project-desc">Custom HUD gameplay mod for GTA V.</div>
+          <div class="project-meta"><span class="pm-label">VERSION:</span> 1.0 · <span class="pm-label">AUTHOR:</span> M_Salem</div>
+          <div class="feature-list">
+            <span class="feature-chip">168 DOWNLOADS</span>
+            <span class="feature-chip">4 LIKES</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>PUBLISHED</div>
+          <span class="project-link">[ GTA V ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img" style="font-size:3.5rem;">⚙</div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">VEHICLES</span>
+            <span class="project-tag">.NET</span>
+          </div>
+          <div class="project-title">Manual Transmission V</div>
+          <div class="project-desc">A GTA V manual transmission mod developed and tested on the standard/Legacy PC version using ScriptHookV and ScriptHookVDotNet. Controls are configurable through the configuration file.</div>
+          <div class="project-meta"><span class="pm-label">VERSION:</span> 2.0 · <span class="pm-label">AUTHOR:</span> M_Salem</div>
+          <div class="feature-list">
+            <span class="feature-chip">1,944 DOWNLOADS</span>
+            <span class="feature-chip">16 LIKES</span>
+            <span class="feature-chip">5.0 / 5</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>PUBLISHED</div>
+          <span class="project-link">[ GTA V ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="websites">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Websites</h3>
+      <span class="ops-group-count">// 03</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c2">
+          <img src="bew1.png" alt="BEE CODE AI preview 1" loading="lazy" decoding="async">
+          <img src="bew2.png" alt="BEE CODE AI preview 2" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">WEB</span>
+            <span class="project-tag">AI</span>
+          </div>
+          <div class="project-title">BEE CODE AI</div>
+          <div class="project-desc">AI-powered platform focused on programming and development.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LIVE</div>
+          <span class="project-link">[ WEBSITES ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="npd.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">WEB</span>
+            <span class="project-tag">DESIGN</span>
+          </div>
+          <div class="project-title">NABTA DIGITAL</div>
+          <div class="project-desc">Website created for a design-focused server/community.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LIVE</div>
+          <span class="project-link">[ WEBSITES ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="zen.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">WEB</span>
+            <span class="project-tag">HOSTING</span>
+          </div>
+          <div class="project-title">ZENTROHOST</div>
+          <div class="project-desc">Hosting shop / hosting service website.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LIVE</div>
+          <span class="project-link">[ WEBSITES ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="logins">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Login Panels</h3>
+      <span class="ops-group-count">// 08</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="ops-group-note reveal">&gt; sample &amp; demo login-panel / authentication UI designs</div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="log3d.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#1</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c3">
+          <img src="mt1.png" alt="Login panel 2 preview 1" loading="lazy" decoding="async">
+          <img src="mt2.png" alt="Login panel 2 preview 2" loading="lazy" decoding="async">
+          <img src="mt3.png" alt="Login panel 2 preview 3" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#2</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="log3d2.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#3</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-media"><video src="loglam.mp4" controls muted playsinline preload="none"></video></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#4</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c3">
+          <img src="log1.png" alt="Login panel 5 preview 1" loading="lazy" decoding="async">
+          <img src="log2.png" alt="Login panel 5 preview 2" loading="lazy" decoding="async">
+          <img src="log3.png" alt="Login panel 5 preview 3" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#5</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c4">
+          <img src="logp1.png" alt="Login panel 6 preview 1" loading="lazy" decoding="async">
+          <img src="logp2.png" alt="Login panel 6 preview 2" loading="lazy" decoding="async">
+          <img src="logp3.png" alt="Login panel 6 preview 3" loading="lazy" decoding="async">
+          <img src="logp4.png" alt="Login panel 6 preview 4" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#6</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c3">
+          <img src="lom1.png" alt="Login panel 7 preview 1" loading="lazy" decoding="async">
+          <img src="lom2.png" alt="Login panel 7 preview 2" loading="lazy" decoding="async">
+          <img src="lom3.png" alt="Login panel 7 preview 3" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#7</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="img-grid c3">
+          <img src="plog1.png" alt="Login panel 8 preview 1" loading="lazy" decoding="async">
+          <img src="plog2.png" alt="Login panel 8 preview 2" loading="lazy" decoding="async">
+          <img src="plog3.png" alt="Login panel 8 preview 3" loading="lazy" decoding="async">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">LOGIN PANEL</span>
+            <span class="project-tag">SAMPLE</span>
+          </div>
+          <div class="project-title">#8</div>
+          <div class="project-desc">Sample login-panel and authentication UI design.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>SAMPLE</div>
+          <span class="project-link">[ LOGIN PANELS ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ops-group" data-cat="kali">
+    <div class="ops-group-head reveal">
+      <h3 class="ops-group-title">Kali / Pentesting</h3>
+      <span class="ops-group-count">// 04</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="ops-group-note reveal">&gt; authorized security research / pentesting lab work only</div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="k1.png" alt="MEDO Account &amp; Wi-Fi Toolkit" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">SECURITY TESTING</span>
+            <span class="project-tag">WI-FI</span>
+          </div>
+          <div class="project-title">MEDO Account &amp; Wi-Fi Toolkit</div>
+          <div class="project-desc">Security-testing toolkit combining account-security research and Wi-Fi/network utilities.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LAB BUILD</div>
+          <span class="project-link">[ KALI ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="km2.png" alt="MEDO Security Toolkit" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">SECURITY</span>
+            <span class="project-tag">OSINT</span>
+            <span class="project-tag">RECON</span>
+          </div>
+          <div class="project-title">MEDO Security Toolkit</div>
+          <div class="project-desc">Multi-purpose security toolkit covering network tools, password and encoding utilities, social/OSINT utilities, website security testing, reconnaissance, file analysis and other research utilities.</div>
+          <div class="feature-list">
+            <span class="feature-chip">NETWORK TOOLS</span>
+            <span class="feature-chip">PASSWORD &amp; ENCODING</span>
+            <span class="feature-chip">SOCIAL / OSINT</span>
+            <span class="feature-chip">WEBSITE SECURITY TESTING</span>
+            <span class="feature-chip">RECONNAISSANCE</span>
+            <span class="feature-chip">FILE ANALYSIS</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LAB BUILD</div>
+          <span class="project-link">[ KALI ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="km3.png" alt="MEDO Account BruteForce" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">AUTH TESTING</span>
+            <span class="project-tag">RESEARCH</span>
+          </div>
+          <div class="project-title">MEDO Account BruteForce</div>
+          <div class="project-desc">Authentication-security research tool focused on studying account security and login protection.</div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LAB BUILD</div>
+          <span class="project-link">[ KALI ]</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-scan"></div>
+        <div class="project-img pad"><img src="km4.png" alt="MEDO Framework" loading="lazy" decoding="async"></div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">FRAMEWORK</span>
+            <span class="project-tag">PENTESTING</span>
+          </div>
+          <div class="project-title">MEDO Framework</div>
+          <div class="project-desc">Security research framework for authorized scanning, reconnaissance and lab testing.</div>
+          <div class="feature-list">
+            <span class="feature-chip">NETWORK SCANNING</span>
+            <span class="feature-chip">PORT SCANNING</span>
+            <span class="feature-chip">WEBSITE RECON</span>
+            <span class="feature-chip">PUBLIC-CAMERA RESEARCH</span>
+            <span class="feature-chip">SYSTEM INFORMATION</span>
+            <span class="feature-chip">BUG BOUNTY RECON</span>
+            <span class="feature-chip">BLUETOOTH / NETWORK DISCOVERY</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-status"><div class="status-dot"></div>LAB BUILD</div>
+          <span class="project-link">[ KALI ]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <section id="contact">
@@ -937,6 +2015,11 @@ footer::before{
 <audio id="bg-audio" autoplay loop muted>
     <source src="https://l.top4top.io/m_3526bguc91.mp4" type="audio/mpeg">
 </audio>
+
+<div id="lightbox" aria-hidden="true">
+  <button id="lightbox-close" aria-label="Close">[ CLOSE ]</button>
+  <img id="lightbox-img" alt="preview">
+</div>
 
 <script>
 const cursor=document.getElementById('cursor');
@@ -1087,7 +2170,7 @@ setTimeout(()=>{
   });
 })();
 
-const phrases=['Ethical Hacker','Penetration Tester','Full Stack Developer','Security Researcher','Code Architect'];
+const phrases=['Ethical Hacker','Penetration Tester','Full Stack Developer','Security Researcher','Software Tester','Game / Mod Developer','Automation Tools Dev','Code Architect'];
 let pi=0,ci=0,deleting=false;
 const typingEl=document.getElementById('typing-text');
 function type(){
@@ -1171,6 +2254,33 @@ document.addEventListener('keydown',e=>{
     e.stopPropagation();
   }
 },true);
+
+const filterBtns=document.querySelectorAll('.filter-btn');
+const opsGroups=document.querySelectorAll('.ops-group');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    opsGroups.forEach(g=>{
+      g.style.display=(f==='all'||g.dataset.cat===f)?'':'none';
+    });
+  });
+});
+
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+document.querySelectorAll('.project-card .img-grid img, .project-card .project-img img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src=img.src;
+    lightboxImg.alt=img.alt;
+    lightbox.classList.add('open');
+  });
+});
+function closeLightbox(){lightbox.classList.remove('open');}
+document.getElementById('lightbox-close').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 </script>
 </body>
 </html>
